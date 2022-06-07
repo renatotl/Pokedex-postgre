@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Pokédex</title>
+</head>
+<body>
+    
+    <section id="info">
+        <!--section card  possível stylirizar-->
+       
+
+            <!--essa estrutura precisa ser fechada na emsma linha   <%  %>-->
+
+
+            <div class="cardd">
+                <!--possível stylirizar card por card-->
+                <!--o foreach vai criar várias div para separar em vários cardizinhos-->
+                <img src=" <%= pokemon.imagem %>" alt="">
+                <!-- essa sintex que pegamos links do JS esse sinal de = é porque é apresentado uma variável para acessar os itens de um OBJETO colocamos o PONTO-->
+                <h2>
+                    <%= pokemon.nome %>
+                </h2>
+                <p class="descricaoo">
+                    <%= pokemon.descricao %>
+                </p>
+                <p>Tipo: <%= pokemon.tipo %>
+                </p>
+                <p id="doIdd"> Id <%= pokemon.id %></p><!-- o sinal de igual foi essencial para funcionar-->
+                
+                <p>Altura: <%= pokemon.height %></p>
+
+                <p>Peso: <%= pokemon.weigh %></p>
+
+                <p>Categoria: <%= pokemon.category %></p>
+
+                <p>Abilidade: <%= pokemon.abilities %></p>
+                 <ul>     <li>  <a id="retornar" href="/retornar/<%=pokemon.id%>">Retornar</a></ul> </li>
+
+
+            </div>
+            
+                <!--precisamos dessa sintex para escrever em javaScript no thml-->
+    </section>
+    <!--FORMULÁRIO-->
+
+</body>
+</html>

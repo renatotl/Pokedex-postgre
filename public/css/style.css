@@ -1,0 +1,284 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Press Start 2P', cursive;
+    scroll-behavior: smooth;
+}nav {
+  position: fixed;
+  z-index: 9999;
+  width: 100vw;
+  background-color: #dc0a2d;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+nav ul li {
+  padding: 0.6rem;
+}
+
+nav img {
+  width: 3rem;
+}
+
+nav h1 {
+  color: #fff;
+  font-size: 1.4rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.3rem;
+}
+
+section#cards div.card a#editar {
+  padding: 0.6rem;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  font-size: 1rem;
+  background-color: #fff;
+  border: solid 1px #0077ff;
+  color: #0077ff;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  margin-top: 2rem;
+}
+
+
+
+section#cards div.card a#apagar {
+    padding: 0.6rem;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 1rem;
+    background-color: #fff;
+    border: solid 1px #ff0000;
+    color: #ff0000;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+    margin-top: 1rem;
+  }
+
+  section#cards div.card a#infoo {
+    padding: 0.6rem;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 1rem;
+    background-color: #fff;
+    border: solid 1px #ff0000;
+    color: #ff0000;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+    margin-top: 1rem;
+  }
+  
+  section#info div.cardd a#retornar {
+    padding: 0.6rem;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 1rem;
+    background-color: #fff;
+    border: solid 1px #ff0000;
+    color: #ff0000;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+    margin-top: 1rem;
+    list-style: none; /* tira abolinha */
+    
+
+  }
+
+ 
+  
+  section#info div.cardd a#retornar:hover {
+    background-color: #ff0000;
+    color: #fff;
+  }
+  section#cards div.card a#infoo:hover {
+    background-color: #ff0000;
+    color: #fff;
+  }
+
+  section#cards div.card a#editar:hover {
+    background-color: #0077ff;
+    color: #fff;
+  }
+  
+  section#cards div.card a#apagar:hover {
+      background-color: #ff0000;
+      color: #fff;
+    }
+
+
+
+header {
+  
+    padding: 2rem;
+    background-color: rgb(252, 248, 248);
+    /*foi colocado display flex aqui e não consegui alinha no h1 com text-aling center */
+    
+    
+}
+
+header h1{
+  color: rgb(8, 8, 8);
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+header img{
+  width: 5%
+}
+
+body{
+    background-color: rgb(5, 110, 170);
+    height: 100vh;
+
+}
+main{
+   margin: 0 10rem 0 10rem;
+
+}
+
+#doId{
+  margin-top: .4rem;
+}
+
+section#cards{
+  display: flex;
+  justify-content: space-evenly; /* um espaço armonioso entre os itens  */
+  margin-top: 5rem;/* abaixa um pouco os cards do header */
+  flex-wrap: wrap;/* não deixa juntar muito os cards e joga pra baixo*/
+}
+section#info{
+  display: flex;
+  justify-content: space-evenly; /* um espaço armonioso entre os itens  */
+  margin-top: 5rem;/* abaixa um pouco os cards do header */
+  flex-wrap: wrap;/* não deixa juntar muito os cards e joga pra baixo*/
+}
+
+section#info div.cardd{/*stylirizando o card */
+  width: 20rem;
+  
+  padding: 2rem;
+
+}
+
+
+section#cards div.card{/*stylirizando o card */
+   width: 20rem;
+   box-shadow: 5px 5px 5px 5px   #00000020;
+   padding: 2rem;
+
+}
+
+section#cards div.card img{ /* stylirizando a imagem do card */
+    width: 100%;/* ocupa 100% do espaço do card NÃO ESQUEÇA */
+ 
+ }
+
+ section#cards div.card h2{ /* stylirizando h2*/
+ margin-bottom: 1rem; /* afasta o nome do pokemon do texto em baixo */
+
+ }
+
+ section#cards div.card p.descricao{ /* stylirizando parágrafo da descrição*/
+  margin-bottom: 1rem; /* afasta a descrição do tipo */
+
+ }
+ 
+ section#info div.cardd p.descricaoo{ /* stylirizando parágrafo da descrição*/
+  margin-bottom: 1rem; /* afasta a descrição do tipo */
+
+ }
+ 
+
+ section#cadastrarPokemon{
+flex-direction: column;
+margin: 3rem;
+width: 100%;
+ }
+
+ section#cadastrarPokemon div{
+  margin: 1rem;
+  
+  
+ }
+ section#cadastrarPokemon form input{
+  width: 50%;
+  padding: .4rem;
+border: none;
+  
+ }
+ section#cadastrarPokemon button{
+  padding: .4rem;
+border: none;
+transform: 7s;
+cursor: pointer;
+
+ }
+ section#cadastrarPokemon button:hover{
+  background-color: #ff0000;
+  color: #fff;
+    transition: all 0.3s ease-in-out;
+
+ }
+ footer{
+   background-color:rgb(236, 16, 34);
+   padding: 3rem;
+   text-align: center;
+ }
+
+ section#message {
+  padding: 1.5rem;
+  background-color: rgb(197, 255, 214);
+  color: #004d04;
+  position: fixed;
+  top: 3rem;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+span#close {
+  font-size: 2rem;
+  cursor: pointer;
+  transition: .3s;
+}
+
+span#close:hover{
+  color: rgb(255, 0, 0);
+  transform: scale(1.5);
+}
+
+#linkP{
+text-decoration: none;/* remove a linha sublinhada do texto*/
+color: rgb(8, 8, 8);
+
+}
+
+#linkP:hover{
+color:#fff
+}
