@@ -282,3 +282,148 @@ color: rgb(8, 8, 8);
 #linkP:hover{
 color:#fff
 }
+
+
+.modal-overlay {
+  background-color: #00000050;/* essa opacidade é pra mostrar o fundo da página */
+  width: 100vw;/* tamanho da largura da tela que eu estou */
+  height: 100vh;/* 100% da página que eu estou */
+  position: fixed;/* posição fixada */
+  top: 0;
+  left: 0;
+  z-index: 9999;/* ficará acima de tudo e de todos */
+  display: flex;
+  justify-content: center;/* alinhar no centro */
+  align-items: center;/* alinhamento vertical */
+  overflow-y: auto; /* se for necessário uma barra lateral RESPONSIVIDADE  */
+}
+
+.modal { /* deixando o modal bonito */
+  margin: 1rem;
+  width: 100%;
+  max-width: 600px;/* o máximo de largura que ele pode ir */
+  height: auto;
+  min-height: 300px; /* mínimo de alture */
+  background-color: #fff;
+  border-radius: 11px;/* borda redondinha */
+  display: flex;
+  flex-direction: column;/* deixa em colunas */
+  overflow: hidden; /* não se sobre sair sobre nada  NÃO TER SCROW*/
+}
+
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #dc0a2d;
+  padding: 1rem; /* espaçamento */
+  color: #fff;
+}
+
+
+.modal-header a#close-modal-put {
+  font-size: 1.4rem; /* tamanho do x */
+  color: #fff; /* cor do x */
+  text-decoration: none; /* removendo a linha sobrinhado de bebaixo do x */
+}
+
+
+.modal-body {
+  padding: 0.5rem 1rem;
+  flex: 1;
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.form-modal {
+  display: flex;
+  flex-wrap: wrap;/* quebra linha */
+}
+
+
+.form-modal input {
+  width: 100%; /* o input vai ocupar 100% da linha ai o code de cima funciona legal */
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  outline: none;
+  border: solid 2px #ccc;
+}
+
+.form-modal input {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  outline: none;
+  border: solid 2px #ccc;
+}
+
+
+.form-modal label {
+  color: rgb(112, 112, 112);
+  padding-top: 0.5rem;
+}
+
+.form-modal button {
+  padding: 0.6rem;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  margin: 1rem auto;
+  font-size: 1rem;
+  background-color: #fff;
+  color: #40af00;
+  border: solid 1px #40af00;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out; /* para o hover não ser agrecisso*/
+}
+
+
+.form-modal button:hover {
+  background-color: #40af00;
+  color: #fff;
+}
+
+.modal-body p {
+  width: 100%;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+div#btns-del {
+  display: flex;
+  margin: 0 auto;
+}
+
+
+div#btns-del a {
+  padding: 0.7rem;
+  text-decoration: none;
+  width: 100%;
+  margin: 2rem 1rem 1rem;
+  border-radius: 3px;
+}
+
+div#btns-del a#no {
+  color: #dc0a2d;
+  border: solid 1px #dc0a2d;
+  transition: all 0.3s ease-in-out;/* por causa do hover*/
+}
+
+div#btns-del a#no:hover {
+  color: #fff;
+  background-color: #dc0a2d;
+}
+
+div#btns-del a#yes {
+  color: #40af00;
+  border: solid 1px #40af00;
+  transition: all 0.3s ease-in-out;
+}
+
+div#btns-del a#yes:hover {
+  color: #fff;
+  background-color: #40af00;
+}
+

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Pokédex</title>
+</head>
+
+
+<head>
+    
+</head>
+
+<body>
+    <nav>
+        <ul>
+            
+            <li>
+                <a href="/"><!-- pro google indexa minha página-->
+                    <h1>Pokédex</h1>
+                </a>
+            </li>
+            <li><a href="/signup">Cadastro</a> </li>
+            <li><a href="#cards">Pokemons</a></li>
+        </ul>
+    </nav>
+
+    <section id="cadastrarPokemon">
+
+        
+        <h2> Cadastrar Pokemon </h2>
+        <!-- 0 Action do form recebe as informações Esse atributo é o responsável por dizer para onde os dados serão enviados, ou seja, para qual rota no meu back-end esse dados vão, para que lá no back-end eles sejam tratados, esse tratamento pode ser, guarda-los em memoria temporária ou persistir esses dados em algum banco de dados. Nas próximas semanas vamos aprender essa persistência, por ora vamos armazenar em memória.-->
+        <form action="/add" method="POST">
+            <!-- esse add manda a informação lá pro js-->
+            <!--Esse atributo é responsável por dizer como nossos dados serão enviados para a rota determinada, existem duas formas de enviar esses dados, pelo método GET ou POST-->
+            
+            <div>
+                <label for="nome">Nome: </label>
+                <input type="text" name="nome" id="nome" placeholder="Digite o nome do pokemon" quired >
+            </div>
+            <div>
+                <label for="descricao">Descrição: </label>
+                <input type="text" name="descricao" id="Descrição" placeholder="Digite a Descrição" quired>
+            </div>
+            <div>
+                <label for="tipo">tipo: </label>
+                <input type="text" name="tipo" id="tipo" placeholder="Digite o tipo" quired><!--pegar aREQUISIÇÃO é pelo NAME=-->
+            </div>
+            <div>
+                <label for="imagem">imagem: </label>
+                <input type="text" name="imagem" id="imagem" placeholder="Cole o endereço do link da imagem" quired>
+            </div>
+            <div>
+                <label for="height">altura: </label>
+                <input type="text" name="height" id="altura" placeholder="Altura" required>
+            </div>
+            <div>
+                <label for="weigh">Peso: </label>
+                <input type="text" name="weigh" id="weigh" placeholder="Peso" required>
+            </div>
+            <div>
+                <label for="category">categoria: </label>
+                <input type="text" name="category" id="category" placeholder="Categoria" required>
+            </div>
+            <div>
+                <label for="abilities">Abilidade: </label>
+                <input type="text" name="abilitiesy" id="abilities" placeholder="Abilidade" required>
+            </div>
+
+            <button id="btCadastrar" type="submit">Cadastrar</button>
+        </form>
+
+     
+          
+       
+
+    </section>
+
+
+
+    
+
+    <section id="cadastro">
+
+        <img src="/img/pokedex.png" alt="Pokedex">
+
+        <div>
+            
+
+            <h2>Cadastre um novo Pokemon!</h2>
+
+            <form action="/create" method="POST">
+
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome">
+
+                <label for="descricao">Descrição:</label>
+                <input type="text" id="descricao" name="descricao">
+
+                <label for="tipo">Tipo:</label>
+                <input type="text" id="tipo" name="tipo">
+
+                <label for="imagem">Link da Imagem</label>
+                <input type="text" id="imagem" name="imagem">
+
+                <button id="btnCadastrar" type="submit">Cadastrar</button>
+
+            </form>
+        </div>
+
+    </section>
+
+    
+    
+    <script src="/script.js"></script>
+</body>
+<footer>
+    <p>Desenvolvido por: Renato Tenório</p><p><a id="linkP" href="https://www.pokemon.com/br/pokedex/">www.pokemon.com</a></p>
+</footer>
+</html>

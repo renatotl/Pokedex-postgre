@@ -1,29 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
-    <title>Pokédex</title>
-</head>
+    <head>
+        <%- include('./components/head') %><!--assim que chamamos o head em componentes pra ca-->
+    </head>
 
 <body>
-
-    <nav>
-        <ul>
-            
-            <li>
-                <a href="/"><!-- pro google indexa minha página-->
-                    <h1>Pokédex</h1>
-                </a>
-            </li>
-            <li><a href="#cadastrarPokemon">Cadastro</a> </li>
-            <li><a href="#cards">Pokemons</a></li>
-        </ul>
-    </nav>
-
+    <%- include('./components/nav') %> <!--chamando a nav dos componentes pra ca-->
+    
     <!-- o code de baixo é pra message não aparecer toda hora e sem mensagem-->
     <% if(message != "") {  %>
 <section id="message"> <!--CODE de confirmação de cadastro-->
@@ -59,120 +43,33 @@
                     </p>
                     <p id="doId"> Id <%= pokemon.id %></p><!-- o sinal de igual foi essencial para funcionar-->
                     <a id="infoo" href="/info/<%=pokemon.id%>">info</a>
-                    <a id="editar" href="/detalhes/<%=pokemon.id%>">Editar</a>
-                    <a id="apagar" href="/delete/<%=pokemon.id%>">Apagar</a>
+                    <a id="editar" href="/getById/<%=pokemon.id%>/put/">Editar</a>
+                    <a id="apagar" href="/getById/<%=pokemon.id%>/delete/">Apagar</a>
 
                 </div>
                 <% }) %>
                     <!--precisamos dessa sintex para escrever em javaScript no thml-->
         </section>
         <!--FORMULÁRIO-->
-        <section id="cadastrarPokemon">
-
-            <% if (pokemon == undefined) { %>  <!--se pokemon for undefined o if irá rodar o código de baixo-->
-            <h2> Cadastrar Pokemon </h2>
-            <!-- 0 Action do form recebe as informações Esse atributo é o responsável por dizer para onde os dados serão enviados, ou seja, para qual rota no meu back-end esse dados vão, para que lá no back-end eles sejam tratados, esse tratamento pode ser, guarda-los em memoria temporária ou persistir esses dados em algum banco de dados. Nas próximas semanas vamos aprender essa persistência, por ora vamos armazenar em memória.-->
-            <form action="/add" method="POST">
-                <!-- esse add manda a informação lá pro js-->
-                <!--Esse atributo é responsável por dizer como nossos dados serão enviados para a rota determinada, existem duas formas de enviar esses dados, pelo método GET ou POST-->
-                
-                <div>
-                    <label for="nome">Nome: </label>
-                    <input type="text" name="nome" id="nome" placeholder="Digite o nome do pokemon" quired >
-                </div>
-                <div>
-                    <label for="descricao">Descrição: </label>
-                    <input type="text" name="descricao" id="Descrição" placeholder="Digite a Descrição" quired>
-                </div>
-                <div>
-                    <label for="tipo">tipo: </label>
-                    <input type="text" name="tipo" id="tipo" placeholder="Digite o tipo" quired><!--pegar aREQUISIÇÃO é pelo NAME=-->
-                </div>
-                <div>
-                    <label for="imagem">imagem: </label>
-                    <input type="text" name="imagem" id="imagem" placeholder="Cole o endereço do link da imagem" quired>
-                </div>
-                <div>
-                    <label for="height">altura: </label>
-                    <input type="text" name="height" id="altura" placeholder="Altura" required>
-                </div>
-                <div>
-                    <label for="weigh">Peso: </label>
-                    <input type="text" name="weigh" id="weigh" placeholder="Peso" required>
-                </div>
-                <div>
-                    <label for="category">categoria: </label>
-                    <input type="text" name="category" id="category" placeholder="Categoria" required>
-                </div>
-                <div>
-                    <label for="abilities">Abilidade: </label>
-                    <input type="text" name="abilitiesy" id="abilities" placeholder="Abilidade" required>
-                </div>
-
-                <button id="btCadastrar" type="submit">Cadastrar</button>
-            </form>
-
-            <% } else {%>
-                <h2> Atualizção do pokemon </h2>
-            
-
-            <form action="/update/<%= pokemon.id %>" method="POST">
-                <!-- esse add manda a informação lá pro js-->
-                <!--Esse atributo é responsável por dizer como nossos dados serão enviados para a rota determinada, existem duas formas de enviar esses dados, pelo método GET ou POST-->
-                
-                <div>
-                    <label for="nome">Nome: </label>
-                    <input type="text" name="nome" id="nome" placeholder="Digite o nome do pokemon" value="<%= pokemon.nome %>"required>
-                </div>
-                <div>
-                    <label for="descricao">Descrição: </label>
-                    <input type="text" name="descricao" id="Descrição" placeholder="Digite a Descrição" value="<%= pokemon.descricao %>"required>
-                </div>
-                <div>
-                    <label for="tipo">tipo: </label>
-                    <input type="text" name="tipo" id="tipo" placeholder="Digite o tipo" value="<%= pokemon.tipo %>"required>
-                </div>
-                <div>
-                    <label for="imagem">imagem: </label>
-                    <input type="text" name="imagem" id="imagem" placeholder="Cole o endereço do link da imagem" value="<%= pokemon.imagem %>"required>
-                </div>
-                <div>
-                    <label for="height">altura: </label>
-                    <input type="text" name="height" id="altura" placeholder="Altura" value="<%= pokemon.height %>"required>
-                </div>
-                <div>
-                    <label for="weigh">Peso: </label>
-                    <input type="text" name="weigh" id="weigh" placeholder="Peso" value="<%= pokemon.weigh %>" required>
-                </div>
-                <div>
-                    <label for="category">categoria: </label>
-                    <input type="text" name="category" id="category" placeholder="Categoria" value="<%= pokemon.category %>" required>
-                </div>
-                <div>
-                    <label for="abilities">Abilidade: </label>
-                    <input type="text" name="abilitiesy" id="abilities" placeholder="Abilidade" value="<%= pokemon.abilities %>" required><!--Neste caso o value="<%= pokemon.tipo %>" PEGA A INFORMAÇÃO já registrada na cadastro para atualização-->
-                </div>
-
-
-                <button id="btAtualizar" type="submit">Atualizar</button>
-            </form>
-              <% } %>
-
-        </section>
+        
 
     </main>
 
-    <section id="info">
+    <section id="info">    </section>
 
 
-        
 
-    </section>
+
+    <% if(pokemonPut != null)  { %>
+    <%- include('./components/modalPut') %>
+    <% } %>
+
+        <%- include('./components/footer') %>
+
+
 
     <script src="/js/script.js"></script>
 </body>
-<footer>
-    <p>Desenvolvido por: Renato Tenório</p><p><a id="linkP" href="https://www.pokemon.com/br/pokedex/">www.pokemon.com</a></p>
-</footer>
+
 
 </html>
