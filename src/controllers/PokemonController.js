@@ -15,7 +15,7 @@ const getAll = async (req,res) => {
 
 try{
 const pokedex = await Pokemon.findAll()
-   res.render('index',{pokedex, pokemonPut: null, PokemonDel: null})
+   res.render('index',{pokedex, pokemonPut: null, pokemonDel: null})
 }catch (err) {
 res.status(500).send({err: err.message})//erro do servidor
 // o messa vem o objeto err pro causa do express
