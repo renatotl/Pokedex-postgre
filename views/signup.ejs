@@ -14,21 +14,17 @@
 </head>
 
 <body>
-    <nav>
-        <ul>
-            
-            <li>
-                <a href="/"><!-- pro google indexa minha página-->
-                    <h1>Pokédex</h1>
-                </a>
-            </li>
-            <li><a href="/signup">Cadastro</a> </li>
-            <li><a href="#cards">Pokemons</a></li>
-        </ul>
-    </nav>
-
+    
+    <%- include('./components/nav') %>
+    <header>
+        <h1>Pokédex</h1>
+        <img src="img/download.png" alt="pokebola">
+        <% if(message != "") { %> <!-- se message for diferente de vazio mostra o alert de baixo-->
+        <%- include('./components/alerts') %><!--Aparecerá os alertas-->
+        <% } %>
+    </header>
     <section id="cadastrarPokemon">
-
+        
         
         <h2> Cadastrar Pokemon </h2>
         <!-- 0 Action do form recebe as informações Esse atributo é o responsável por dizer para onde os dados serão enviados, ou seja, para qual rota no meu back-end esse dados vão, para que lá no back-end eles sejam tratados, esse tratamento pode ser, guarda-los em memoria temporária ou persistir esses dados em algum banco de dados. Nas próximas semanas vamos aprender essa persistência, por ora vamos armazenar em memória.-->
@@ -37,6 +33,7 @@
             <!--Esse atributo é responsável por dizer como nossos dados serão enviados para a rota determinada, existem duas formas de enviar esses dados, pelo método GET ou POST-->
             
             <div>
+                
                 <label for="nome">Nome: </label>
                 <input type="text" name="nome" id="nome" placeholder="Digite o nome do pokemon" quired >
             </div>

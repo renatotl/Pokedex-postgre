@@ -18,6 +18,9 @@
     <header>
         <h1>Pokédex</h1>
         <img src="img/download.png" alt="pokebola">
+        <% if(message != "") { %> <!-- se message for diferente de vazio mostra o alert de baixo-->
+        <%- include('./components/alerts') %><!--Aparecerá os alertas-->
+        <% } %>
     </header>
 
     <main>

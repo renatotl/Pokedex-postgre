@@ -11,7 +11,8 @@ routes.get("/getById/:id/:method", PokemonController.getById);// rota em getById
 //rota update
 routes.post("/update/:id", PokemonController.update);
 routes.get("/remove/:id", PokemonController.remove);
-
+//rota de informação
+routes.get("/info/:id", PokemonController.info);
 
 
 module.exports = routes;

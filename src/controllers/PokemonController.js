@@ -5,15 +5,20 @@ const Pokemon = require("../models/Pokemon");// trazndo pokemon pro nosso contro
 // app.get('/', (req,res) =>{
 //     res.render('index')
 // })
-
+//como no Postgres sempre que alteramos um card ele muda a ordem com esse code de baixo ele ordenará por ID. 
+// esse código também funciona se eu colocar lo dentro de todos do findAll() o finadAll gera uma LISTA O GETbYiD NÃO
 const orderById = { order: [["id", "ASC"]] };//definido o orderById
-let message = "";
-let type = "";
+let message = ""; // definindo MESSAGE ela vai ser LET porque a mensagem irá mudar 
+let type = ""; // definindo TYPE
 //alinha de cima está representada na linha de baixo
 
 const getAll = async (req,res) => {
 
 try{
+  setTimeout(() => {
+    message = "";
+    type = "";
+  }, 1000);
 const pokedex = await Pokemon.findAll()
    res.render('index',{pokedex, pokemonPut: null, pokemonDel: null})
 }catch (err) {
@@ -27,7 +32,7 @@ res.status(500).send({err: err.message})//erro do servidor
 //direcionar para pg signup
 const signup = (req,res) => {
 try{
-res.render("signup");//só quero que ele tente renderizar minha página signup
+res.render("signup",{message, type});//só quero que ele tente renderizar minha página signup
 
 }catch (err) {
    res.status(500).send({err: err.message})//erro do servidor
@@ -40,6 +45,8 @@ const add = async (req,res) => {
    try {
       const pokemon =req.body;
       if (!pokemon) {
+        message = "Preencha todos os campos para cadastrar! ";// mensagem que aparecerá e já foi definida lá me cima 
+        type = "danger";
          return res.redirect('/signup')// redireciona para routes na linha 8
       }
       await Pokemon.create(pokemon);
@@ -104,7 +111,24 @@ const getById = async (req, res) => {//função de call back
     res.status(500).send({ err: err.message });
   }
 };
+ 
+const info = async (req, res) => {
+  try {
+    const id = +req.params.id -1;// esses códigos foram exenciasi para info mostrar um pokemon
+ 
+    let pokemon = undefined;//se refere a linha de baixo
+  
+  res.render("index2", {pokemon} )
 
+   
+
+  } catch (err) {
+    res.status(500).send({ err: err.message });
+
+  }
+
+
+}
 
 module.exports = {
    getAll,
@@ -113,4 +137,5 @@ module.exports = {
    getById,
    update,
    remove,
+   info
 };
