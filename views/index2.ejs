@@ -8,7 +8,9 @@
     <title>Pokédex</title>
 </head>
 <body>
-    
+    <%- include('./components/nav') %>
+    <%- include('./components/header') %>
+
     <section id="info">
         <!--section card  possível stylirizar-->
        
@@ -19,26 +21,26 @@
             <div class="cardd">
                 <!--possível stylirizar card por card-->
                 <!--o foreach vai criar várias div para separar em vários cardizinhos-->
-                <img src=" <%= pokemon.imagem %>" alt="">
+                <img src=" <%= pokemonPut.imagem %>" alt="">
                 <!-- essa sintex que pegamos links do JS esse sinal de = é porque é apresentado uma variável para acessar os itens de um OBJETO colocamos o PONTO-->
                 <h2>
-                    <%= pokemon.nome %>
+                    <%= pokemonPut.nome %>
                 </h2>
                 <p class="descricaoo">
-                    <%= pokemon.descricao %>
+                    <%= pokemonPut.descricao %>
                 </p>
-                <p>Tipo: <%= pokemon.tipo %>
+                <p>Tipo: <%= pokemonPut.tipo %>
                 </p>
-                <p id="doIdd"> Id <%= pokemon.id %></p><!-- o sinal de igual foi essencial para funcionar-->
+                <p id="doIdd"> Id <%= pokemonPut.id %></p><!-- o sinal de igual foi essencial para funcionar-->
                 
-                <p>Altura: <%= pokemon.height %></p>
+                <p>Altura: <%= pokemonPut.height %></p>
 
-                <p>Peso: <%= pokemon.weigh %></p>
+                <p>Peso: <%= pokemonPut.weigh %></p>
 
-                <p>Categoria: <%= pokemon.category %></p>
+                <p>Categoria: <%= pokemonPut.category %></p>
 
-                <p>Abilidade: <%= pokemon.abilities %></p>
-                 <ul>     <li>  <a id="retornar" href="/retornar/<%=pokemon.id%>">Retornar</a></ul> </li>
+                <p>Abilidade: <%= pokemonPut.abilities %></p>
+                 <ul>     <li>  <a id="retornar" href="/retornar">Retornar</a></ul> </li>
 
 
             </div>

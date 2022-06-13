@@ -114,14 +114,35 @@ const getById = async (req, res) => {//função de call back
  
 const info = async (req, res) => {
   try {
-    const id = +req.params.id -1;// esses códigos foram exenciasi para info mostrar um pokemon
- 
-    let pokemon = undefined;//se refere a linha de baixo
-  
-  res.render("index2", {pokemon} )
-
+ const pokemonPut = await Pokemon.findByPk(req.params.id);// passando o valor do pokemon escolhido 
+    
    
 
+ 
+  res.render("index2", { pokemonPut, } )
+   
+   
+   
+  } catch (err) {
+    res.status(500).send({ err: err.message });
+
+  }
+
+
+}
+
+
+const retornar =  (req, res) => {
+  try {
+    
+    
+    
+    
+    res.redirect("/");
+
+   
+   
+   
   } catch (err) {
     res.status(500).send({ err: err.message });
 
@@ -137,5 +158,6 @@ module.exports = {
    getById,
    update,
    remove,
-   info
+   info,
+   retornar
 };

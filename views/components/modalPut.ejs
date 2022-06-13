@@ -20,7 +20,22 @@
 
                 <label for="imagem">Link da Imagem</label>
                 <input type="text" id="imagem" name="imagem" value="<%= pokemonPut.imagem %>">
-
+                
+                    <label for="height">altura: </label>
+                    <input type="text" name="height" id="altura" placeholder="Altura"value="<%= pokemonPut.height %>" required>
+                
+                
+                    <label for="weigh">Peso: </label>
+                    <input type="text" name="weigh" id="weigh" placeholder="Peso"value="<%= pokemonPut.weigh %>" required>
+                
+                
+                    <label for="category">categoria: </label>
+                    <input type="text" name="category" id="category" placeholder="Categoria"value="<%= pokemonPut.category %>" required>
+                
+                
+                    <label for="abilities">Abilidade: </label>
+                    <input type="text" name="abilitiesy" id="abilities" placeholder="Abilidade"value="<%= pokemonPut.abilitiesy %>" required>
+                
                 <button id="btnCadastrar" type="submit">Atualizar</button>
 
             </form>

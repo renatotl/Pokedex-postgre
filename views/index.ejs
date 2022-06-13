@@ -15,13 +15,8 @@
 </section>
 <% }  %>
 
-    <header>
-        <h1>Pokédex</h1>
-        <img src="img/download.png" alt="pokebola">
-        <% if(message != "") { %> <!-- se message for diferente de vazio mostra o alert de baixo-->
-        <%- include('./components/alerts') %><!--Aparecerá os alertas-->
-        <% } %>
-    </header>
+<%- include('./components/header') %>
+    
 
     <main>
         <!--esse maon é pla facilitar na stylização-->
@@ -30,10 +25,20 @@
             <% pokedex.forEach((pokemon)=> { %>
                 <!--essa estrutura precisa ser fechada na emsma linha   <%  %>-->
 
-
                 <div class="card">
                     <!--possível stylirizar card por card-->
                     <!--o foreach vai criar várias div para separar em vários cardizinhos-->
+                    <div class="dropdown">
+                        <div class="dropdown-button">
+                            <i class="bi bi-three-dots-vertical"></i>
+                        </div>
+                        <div class="dropdown-content">
+                            <a id="editar" href="/getById/<%= pokemon.id %>/put">Editar</a>
+                            <a id="apagar" href="/getById/<%= pokemon.id %>/delete">Apagar</a>
+                        </div>
+                    </div>
+
+
                     <img src=" <%= pokemon.imagem %>" alt="">
                     <!-- essa sintex que pegamos links do JS esse sinal de = é porque é apresentado uma variável para acessar os itens de um OBJETO colocamos o PONTO-->
                     <h2>
@@ -75,7 +80,7 @@
 
 
 
-    <script src="/js/script.js"></script>
+    <script src="/public/js/script.js"></script>
 </body>
 
 

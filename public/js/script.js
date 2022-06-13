@@ -25,23 +25,23 @@
     }, 5000);
   };
   
-  const viewDropdown = () => {
-    const buttons = document.querySelectorAll(".dropdown-button");
-  
+  const viewDropdown = () => { // função do ViewDropDOWN
+    const buttons = document.querySelectorAll(".dropdown-button");// pegando o button 
+  // ele virou um arrey porque vai verificar todos os botões 
     buttons.forEach((btn) => {
-      btn.addEventListener("click", (event) => {
-        const content = event.path[2].children[1];
+      btn.addEventListener("click", (event) => {// identifica qual botão está clicando e aplica um evento
+        const content = event.path[2].children[1];// o path é onde ele tá e o childrn é a posição dele em relação ao dropdown. pegamos esse caminho no console
         
-        content.classList.toggle("active")
+        content.classList.toggle("active")//add active class e tira
   
         if (content.classList.contains("active")){
-          content.style.display = "block";
+          content.style.display = "block";// troca do evento 
         } else {
           content.style.display = "none";
         }
   
-        content.addEventListener("mouseleave", () => {
-          content.classList.remove("active");
+        content.addEventListener("mouseleave", () => {// quando mouse sair o content fecha
+          content.classList.remove("active");// remover ective 
           if (!content.classList.contains("active")){
             content.style.display = "none";
           }
@@ -50,6 +50,6 @@
       })
     })
   };
-  
+  // FUncções sendo executdas forever 
   viewDropdown();
   closeAlert();

@@ -13,6 +13,7 @@ routes.post("/update/:id", PokemonController.update);
 routes.get("/remove/:id", PokemonController.remove);
 //rota de informação
 routes.get("/info/:id", PokemonController.info);
+routes.get("/retornar", PokemonController.retornar);
 
 
 module.exports = routes;

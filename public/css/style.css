@@ -6,6 +6,10 @@
     margin: 0;
     font-family: 'Press Start 2P', cursive;
     scroll-behavior: smooth;
+    -webkit-user-select: none;/* internet explore */
+  -moz-user-select: -moz-none;/* mozilas */
+  -ms-user-select: none; /* todos os microsoft*/
+    user-select: none;/* tira o curso selecionando em certos pontos não é compatível com todos os servidores */
 }nav {
   position: fixed;
   z-index: 9999;
@@ -465,4 +469,45 @@ div#btns-del a#yes:hover {
 .message i {
   cursor: pointer;
   font-size: 1.7rem;
+}
+.dropdown {/* jogado tudo pra direita */
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+.dropdown-button {
+  font-size: 1.5rem;
+  cursor: pointer; /* quando passao o curso nos pontinhos aparecerá umaa mão de click */
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+.dropdown-button:hover {/* uma animação */
+  box-shadow: 0px 10px 10px 0 #00000030;
+}
+.dropdown-content {
+  display: none;/* esete cara que escondeu as opções */
+  position: absolute;/* sai do escopo do flax box */ 
+  width: 6rem;
+  margin-top: 1.8rem;
+  overflow: auto;/* se precisar de scrow vai ser automático */
+  box-shadow: 0px 10px 10px 0 #00000015;
+  background-color: #fff;
+}
+
+.dropdown-content a {
+  text-decoration: none;/* tirar decoração de links */ 
+  display: flex; /* aberto a direita */
+  justify-content: flex-end;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  transition: all 0.3s ease-in-out;
+  color: #000000;
+}
+
+
+.dropdown-content a:hover {
+  background-color: #dc0a2d;
+  color: #fff;
 }
